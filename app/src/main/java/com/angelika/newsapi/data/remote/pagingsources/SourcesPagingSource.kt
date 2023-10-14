@@ -32,9 +32,9 @@ class SourcesPagingSource(
                 nextPageNumber
             )
         } catch (exception: IOException) {
-            return LoadResult.Error(exception)
+            LoadResult.Error(exception)
         } catch (exception: HttpException) {
-            return LoadResult.Error(exception)
+            LoadResult.Error(exception)
         }
     }
 }

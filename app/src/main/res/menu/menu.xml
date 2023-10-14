@@ -3,13 +3,16 @@
 
     <item
         android:id="@+id/everythingFragment"
+        android:icon="@drawable/icon_monetization"
         android:title="@string/everything_menu" />
 
     <item
         android:id="@+id/topHeadlinesFragment"
+        android:icon="@drawable/icon_trending_up"
         android:title="@string/top_headlines_menu" />
 
     <item
         android:id="@+id/sourcesFragment"
+        android:icon="@drawable/icon_comfy"
         android:title="@string/sources_menu" />
 </menu>

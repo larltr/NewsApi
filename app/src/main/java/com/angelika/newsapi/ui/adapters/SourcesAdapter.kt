@@ -6,10 +6,10 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.angelika.newsapi.databinding.ItemNewsBinding
-import com.angelika.newsapi.models.NewsModel
-import com.bumptech.glide.Glide
+import com.angelika.newsapi.models.SourcesModel
 
-class NewsAdapter : PagingDataAdapter<NewsModel, NewsAdapter.ViewHolder>(DiffUtilCallBack()) {
+class SourcesAdapter :
+    PagingDataAdapter<SourcesModel, SourcesAdapter.ViewHolder>(DiffUtilCallback()) {
 
     private val NETWORK_VIEW_TYPE = 1
     val WALLPAPER_VIEW_TYPE = 2
@@ -17,11 +17,10 @@ class NewsAdapter : PagingDataAdapter<NewsModel, NewsAdapter.ViewHolder>(DiffUti
     inner class ViewHolder(private val binding: ItemNewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(newsModel: NewsModel) = with(binding) {
-            binding.tvTitle.text = newsModel.title
-            binding.tvAuthor.text = newsModel.author
-            binding.tvName.text = newsModel.source.name
-            Glide.with(binding.ivUrlImage).load(newsModel.urlToImage).into(binding.ivUrlImage)
+        fun onBind(sourcesModel: SourcesModel) = with(binding) {
+            binding.tvTitle.text = sourcesModel.name
+            binding.tvAuthor.text = sourcesModel.category
+            binding.tvName.text = sourcesModel.description
         }
     }
 
@@ -34,25 +33,21 @@ class NewsAdapter : PagingDataAdapter<NewsModel, NewsAdapter.ViewHolder>(DiffUti
             ItemNewsBinding.inflate(
                 LayoutInflater.from(
                     parent.context
-                ),
-                parent, false
+                ), parent,
+                false
             )
         )
     }
 
     companion object {
-        class DiffUtilCallBack : DiffUtil.ItemCallback<NewsModel>() {
-            override fun areItemsTheSame(
-                oldItem: NewsModel,
-                newItem: NewsModel
-            ): Boolean {
-                return oldItem.title == newItem.title
+
+        class DiffUtilCallback : DiffUtil.ItemCallback<SourcesModel>() {
+
+            override fun areItemsTheSame(oldItem: SourcesModel, newItem: SourcesModel): Boolean {
+                return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(
-                oldItem: NewsModel,
-                newItem: NewsModel
-            ): Boolean {
+            override fun areContentsTheSame(oldItem: SourcesModel, newItem: SourcesModel): Boolean {
                 return oldItem == newItem
             }
         }

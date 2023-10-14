@@ -3,4 +3,7 @@
     <dimen name="size_in_five_dp">5dp</dimen>
     <dimen name="size_in_ten_dp">10dp</dimen>
     <dimen name="size_in_twenty_sp">20sp</dimen>
+    <dimen name="size_in_ten_sp">10sp</dimen>
+    <dimen name="size_in_fifteen_sp">15sp</dimen>
+    <dimen name="size_in_fifteen_dp">15dp</dimen>
 </resources>

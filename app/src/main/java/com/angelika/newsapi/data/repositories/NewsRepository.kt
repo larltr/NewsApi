@@ -7,6 +7,9 @@ import com.angelika.newsapi.data.remote.apiservice.NewsApiService
 import com.angelika.newsapi.data.remote.pagingsources.EverythingPagingSource
 import com.angelika.newsapi.data.remote.pagingsources.SourcesPagingSource
 import com.angelika.newsapi.data.remote.pagingsources.TopHeadlinesPagingSource
+import com.bumptech.glide.load.engine.Resource
+import kotlinx.coroutines.flow.flow
+import retrofit2.Response
 import javax.inject.Inject
 import javax.inject.Singleton
 
